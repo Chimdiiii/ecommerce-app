@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom";
 import products from "../data/products";
 
 function ProductDetails() {
-  const { id } = useParams();
+  const {id} = useParams();
 
   const product = products.find(
     product => product.id === Number(id)
@@ -15,7 +15,6 @@ function ProductDetails() {
   return (
     <div className="details">
       <img src={product.image} alt={product.title} />
-
       <div className="product-info">
         <h1>{product.title}</h1>
         <h2>${product.price}</h2>

@@ -13,6 +13,7 @@ body{
 .navbar{
     background:white;
     display:flex;
+    flex-wrap: wrap;
     justify-content:space-between;
     align-items:center;
     padding:18px 60px;
