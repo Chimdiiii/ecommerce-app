@@ -75,7 +75,7 @@ const products = [
   }
   ,
   {
-    id: 1,
+    id: 9,
     title: "Men's Cotton Jacket",
     price: 55.99,
     category: "Men's Clothing",
@@ -84,7 +84,7 @@ const products = [
   },
 
   {
-    id: 2,
+    id: 10,
     title: "Women's Handbag",
     price: 75.00,
     category: "Accessories",

@@ -6,7 +6,7 @@ function ProductCard({ product }) {
       <div className="card">
         <img src={product.image} alt={product.title}/>
         <h3>{product.title}</h3>
-        <p>${product.price}</p>
+        <p>${product?.price || 0}</p>
       </div>
     </Link>
   );

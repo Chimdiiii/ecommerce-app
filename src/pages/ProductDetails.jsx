@@ -14,6 +14,7 @@ function ProductDetails() {
 
   return (
     <div className="details">
+      <Link to="/">← Back to Products</Link>
       <img src={product.image} alt={product.title} />
       <div className="product-info">
         <h1>{product.title}</h1>
