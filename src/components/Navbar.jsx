@@ -1,5 +1,5 @@
 import { Link, NavLink } from "react-router-dom";
-function Navbar() {
+function Navbar({cart}) {
   return (
     <nav className="navbar">
       <Link to="/">Fashion</Link>
@@ -8,6 +8,10 @@ function Navbar() {
         <NavLink to="#">Fashion</NavLink>
         <NavLink to="#">Favourite</NavLink>
         <NavLink to="#">Lifestyle</NavLink>
+        <Link to="/cart" className="cart-link">
+          <span className="cart-icon">🛒</span>
+          <span className="cart-count">{cart.length}</span>
+        </Link>
       </div>
     </nav>
   );

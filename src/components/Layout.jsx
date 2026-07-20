@@ -1,10 +1,10 @@
 import { Outlet, Route } from "react-router-dom";
 import Navbar from "./Navbar";
 
-function Layout(){
+function Layout({ cart}){
     return(
         <div>
-            <Navbar />
+            <Navbar cart={cart} />
             <Outlet />
             <footer>
                 <p>&copy; 2023 Fashion. All rights reserved.</p>
