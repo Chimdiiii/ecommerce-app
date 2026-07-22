@@ -13,10 +13,7 @@ function App() {
 });
 
 useEffect(() => {
-  localStorage.setItem(
-    "cart",
-    JSON.stringify(cart)
-  );
+  localStorage.setItem("cart", JSON.stringify(cart));
 }, [cart]);
 
   function addToCart(product) {
@@ -26,18 +23,16 @@ useEffect(() => {
     );
 
     if (existing) {
-      setCart( cart.map(item => item.id === product.id ? { ...item, quantity: item.quantity + 1 }: item)
-      );
+      setCart( cart.map(item => item.id === product.id ? { ...item, quantity: item.quantity + 1 }: item));
     } else {
-      setCart([...cart,{...product,quantity: 1}
-      ]);
+      setCart([...cart,{...product,quantity: 1}]);
     }
   }
 
   return (
     <Routes>
       <Route element={<Layout cart={cart} />}>
-        <Route path="/" element={<Home />}/>
+        <Route path="/" element={<Home addToCart={addToCart}/>}/>
         <Route path="/product/:id" element={ <ProductDetails addToCart={addToCart} />} />
         <Route path="/cart" element={<Cart cart={cart} />}/>
       </Route>

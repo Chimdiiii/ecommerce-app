@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import ProductCard from "../components/ProductCard";
 import { getProducts } from "../data/api";
 
-function Homepage() {
+function Homepage({addToCart}) {
    const [products, setProducts] = useState([]);
 
   useEffect(() => {
@@ -25,8 +25,10 @@ function Homepage() {
         <ProductCard
           key={product.id}
           product={product}
+          addToCart={addToCart}
         />
       ))}
+      
     </div>
   );
 }

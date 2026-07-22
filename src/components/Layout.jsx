@@ -7,7 +7,7 @@ function Layout({ cart}){
             <Navbar cart={cart} />
             <Outlet />
             <footer>
-                <p>&copy; 2023 Fashion. All rights reserved.</p>
+                <p>&copy; 2026 Fashion. All rights reserved.</p>
             </footer>
         </div>
     )
