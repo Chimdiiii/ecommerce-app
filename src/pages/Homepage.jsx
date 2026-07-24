@@ -6,9 +6,7 @@ function Homepage({addToCart}) {
    const [products, setProducts] = useState([]);
 
   useEffect(() => {
-
     async function loadProducts() {
-
       try {
         const data = await getProducts();
         setProducts(data);
@@ -17,7 +15,6 @@ function Homepage({addToCart}) {
       }
     }
     loadProducts();
-
   }, []);
   return (
     <div className="products">

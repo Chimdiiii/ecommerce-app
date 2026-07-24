@@ -3,13 +3,15 @@ import Navbar from "./Navbar";
 
 function Layout({ cart}){
     return(
-        <div>
+        <>
             <Navbar cart={cart} />
-            <Outlet />
+            <main>
+                <Outlet />
+            </main>
             <footer>
                 <p>&copy; 2026 Fashion. All rights reserved.</p>
             </footer>
-        </div>
+        </>
     )
 }
 

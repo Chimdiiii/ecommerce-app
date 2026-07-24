@@ -1,6 +1,7 @@
 import { Link, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { getProducts } from "../data/api";
+import {FiShoppingCart} from "react-icons/fi";
 
 function ProductDetails({ addToCart }) {
   const { id } = useParams();
@@ -32,9 +33,7 @@ function ProductDetails({ addToCart }) {
       <div className="product-info">
         <h1>{product.title}</h1>
         <h2>${product.price}</h2>
-        <button className="cart-btn" onClick={() => addToCart(product)}>
-          Add to Cart
-        </button>
+        <button className="cart-btn" onClick={() => addToCart(product)}>Add to Cart</button>
         <p>{product.description}</p>
         <p><strong>Category:</strong> {product.category}</p>
       </div>

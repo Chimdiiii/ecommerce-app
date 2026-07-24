@@ -41,11 +41,16 @@ a {
     display:flex;
     gap:30px;
 }
+.nav-links a:hover{
+    color:#083db0;
+}
 
 .nav-links a{
     text-decoration:none;
     color:black;
-    font-weight:500;
+    font-weight:200;
+    font-size:1.3rem;
+    font-family:"Great Vibes",cursive;
 }
 
 .navbar button{
@@ -56,6 +61,12 @@ a {
     border-radius:8px;
     cursor:pointer;
 }
+.web-name{
+    font-size:28px;
+    color:black;
+    font-family:"Great Vibes",cursive;
+}
+
 
 .products{
     width:90%;
@@ -68,7 +79,7 @@ a {
 .card{
     background:white;
     border-radius:18px;
-    padding:20px;
+    padding:25px;
     transition:.3s;
     cursor:pointer;
     box-shadow:0 10px 25px rgba(0,0,0,.08);
@@ -92,22 +103,35 @@ a {
 
 .card h3{
     font-size:18px;
-    margin-bottom:23px;
+    margin-bottom:3px;
     color:#222;
     min-height:60px;
+    display:-webkit-box;
+    -webkit-line-clamp:2;
+    line-clamp:2;
+    -webkit-box-orient:vertical;
+    overflow:hidden;
 }
 
 .card p{
-    color:#f4b400;
+    color:#2563EB;
     font-size:20px;
     font-weight:bold;
+    margin-bottom:20px;
 }
 
 .card-link{
     text-decoration:none;
     color:black;
 }
-
+.card-container{
+    width:100%;
+    height:260px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#ffffff;
+}
 
 .details{
     width:90%;
@@ -134,7 +158,7 @@ a {
 }
 
 .details h2{
-    color:#f4b400;
+    color:#2563EB;
     margin-bottom:20px;
 }
 
@@ -156,16 +180,39 @@ a {
     }
 
 }
-.card-button{
+.secondary-button{
     margin:20px 0;
+    margin-top:auto;
     padding:12px 19px;
     background:black;
     color:white;
-    border:none;
-    border-radius:8px;
+    border-radius:4px;
     cursor:pointer;
+    white-space:nowrap;
+    border:2px solid black;
+    height:45px;
 }
-.card-button:hover{
+.primary-button{
+    margin:20px 0;
+    margin-top:auto;
+    padding:12px 19px;
+    background:white ;
+    color:black;
+    border:1px solid black;
+    border-radius:4px;
+    cursor:pointer;
+    white-space:nowrap;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    height: 45px;
+}
+.primary-button:hover{
+    background:#083db0;
+    color:white;
+}
+.secondary-button:hover{
     background:#333;
 }
 .cart-btn{
@@ -206,6 +253,6 @@ a {
 .button-group{
     display:flex;
     gap:10px;
-    flex-wrap:wrap;
+    flex-wrap:nowrap;
     justify-content: center;
 }
