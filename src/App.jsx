@@ -17,7 +17,6 @@ useEffect(() => {
 }, [cart]);
 
   function addToCart(product) {
-
     const existing = cart.find(
       item => item.id === product.id
     );
@@ -28,13 +27,36 @@ useEffect(() => {
       setCart([...cart,{...product,quantity: 1}]);
     }
   }
-
+function increaseQuantity(productId) {
+  setCart(
+    cart.map(item => item.id === productId ? 
+      { ...item, quantity: item.quantity + 1 } : item)
+  .filter(item => item.quantity > 0)  
+);
+}
+function decreaseQuantity(productId) {
+  setCart(
+    cart.map(item => item.id === productId ? 
+      { ...item, quantity: item.quantity - 1 } : item)
+  .filter(item => item.quantity > 0)  
+);
+}
+function removeFromCart(productId) {
+  setCart(
+    cart.filter(item => item.id !== productId)
+  );
+}
   return (
     <Routes>
       <Route element={<Layout cart={cart} />}>
         <Route path="/" element={<Home addToCart={addToCart}/>}/>
         <Route path="/product/:id" element={ <ProductDetails addToCart={addToCart} />} />
-        <Route path="/cart" element={<Cart cart={cart} />}/>
+        <Route path="/cart" element={<Cart 
+        cart={cart}
+        increaseQuantity={increaseQuantity}
+        decreaseQuantity={decreaseQuantity}
+        removeFromCart={removeFromCart}
+        />}/>
       </Route>
     </Routes>
   );

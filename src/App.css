@@ -256,3 +256,33 @@ a {
     flex-wrap:nowrap;
     justify-content: center;
 }
+.quantity-controls{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-top:15px;
+}
+
+.quantity-controls button{
+    width:35px;
+    height:35px;
+    border:none;
+    background:black;
+    color:white;
+    cursor:pointer;
+    border-radius:6px;
+    font-size:18px;
+}
+
+.quantity-controls span{
+    font-size:18px;
+    font-weight:bold;
+    min-width:25px;
+    text-align:center;
+}
+
+.remove-button{
+    width:auto !important;
+    padding:0 15px;
+    background:#dc2626 !important;
+}

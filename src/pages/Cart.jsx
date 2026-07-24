@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-function Cart({ cart }) {
+function Cart({ cart, increaseQuantity, decreaseQuantity, removeFromCart }) {
     if (cart.length === 0) {
         return (
             <div>
@@ -25,7 +25,13 @@ function Cart({ cart }) {
                     <div>
                         <h3>{item.title}</h3>
                         <p>Price: ${item.price}</p>
-                        <p>Quantity: {item.quantity}</p>
+                        <div className="quantity-controls">
+                           <button onClick={() => decreaseQuantity(item.id)}> − </button>
+                           <span>{item.quantity}</span>
+                           <button onClick={() => increaseQuantity(item.id)}>+ </button>
+                           <button className="remove-button" onClick={() => removeItem(item.id)}>Remove</button>
+                       </div>
+                       <p>Subtotal: ${(item.price * item.quantity).toFixed(2)}</p>
                     </div>
                 </div>
             ))}
