@@ -31,7 +31,7 @@ useEffect(() => {
     setMessage(`${product.title} has been added to the cart.`);
     setTimeout(() => {
       setMessage("");
-    }, 3000);
+    }, 1000);
   }
 function increaseQuantity(productId) {
   setCart(
