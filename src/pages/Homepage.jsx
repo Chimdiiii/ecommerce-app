@@ -4,6 +4,7 @@ import { getProducts } from "../data/api";
 
 function Homepage({addToCart}) {
    const [products, setProducts] = useState([]);
+   const [search, setSearch] = useState("");
 
   useEffect(() => {
     async function loadProducts() {
@@ -16,18 +17,28 @@ function Homepage({addToCart}) {
     }
     loadProducts();
   }, []);
-  return (
-    <div className="products">
-      {products.map((product) => (
-        <ProductCard
-          key={product.id}
-          product={product}
-          addToCart={addToCart}
-        />
-      ))}
-      
-    </div>
+
+  const filteredProducts = products.filter(product =>
+    product.title.toLowerCase().includes(search.toLowerCase())
   );
+  return (
+    <>
+        <input type="text" placeholder="Search products..." value={search} onChange={(e) => setSearch(e.target.value)} className="search-bar"/>
+        <div className="products">
+            {filteredProducts.length === 0 ? (
+                <p>No products found.</p>
+            ) : (
+                filteredProducts.map(product => (
+                    <ProductCard
+                        key={product.id}
+                        product={product}
+                        addToCart={addToCart}
+                    />
+                ))
+            )}
+        </div>
+    </>
+);
 }
 
 export default Homepage;
