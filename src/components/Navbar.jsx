@@ -7,7 +7,7 @@ function Navbar({cart}) {
     <nav className="navbar">
       <NavLink className="web-name" to="/">Fashion</NavLink>
       <div className="nav-links">
-        <NavLink to="#">Catalogue</NavLink>
+        <NavLink to="/categories">Categories</NavLink>
         <NavLink to="#">Fashion</NavLink>
         <NavLink to="#">Favourite</NavLink>
         <NavLink to="#">Lifestyle</NavLink>

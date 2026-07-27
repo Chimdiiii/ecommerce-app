@@ -325,3 +325,11 @@ a {
     outline:none;
     border-color:#2563EB;
 }
+
+.category-title{
+    margin:50px 0 25px;
+    font-size:28px;
+    border-left:5px solid #2563EB;
+    padding-left:15px;
+    text-transform:capitalize;
+}
