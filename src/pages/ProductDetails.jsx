@@ -3,23 +3,26 @@ import { useEffect, useState } from "react";
 import { getProducts } from "../data/api";
 import {FiShoppingCart} from "react-icons/fi";
 import ProductCard from "../components/ProductCard";
+import Loader from "../components/Loader";
 
 function ProductDetails({ addToCart }) {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
   const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
 
     async function loadProduct() {
-      const data = await getProducts();
-      setProducts(data);
-
-      const selected = data.find(
+    const data = await getProducts();
+    setProducts(data);
+    const selected = data.find(
         item => item.id === Number(id)
-      );
-      setProduct(selected);
-    }
+    );
+
+    setProduct(selected);
+    setLoading(false);
+}
     loadProduct();
   }, [id]);
 
@@ -30,8 +33,12 @@ function ProductDetails({ addToCart }) {
     )
     .sort(() => Math.random() - 0.5)
     .slice(0, 4);
+
+  if (loading) {
+    return <Loader />;
+  }
   if (!product) {
-    return <h2>Loading products...</h2>;
+    return <h2>Product not found.</h2>;
   }
 
   return (
