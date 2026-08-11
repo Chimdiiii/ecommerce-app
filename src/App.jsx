@@ -5,6 +5,7 @@ import Home from "./pages/Homepage";
 import ProductDetails from "./pages/ProductDetails";
 import Cart from "./pages/Cart";
 import Layout from "./components/Layout";
+import Categories from "./pages/Categories";
 
 function App() {
   const [cart, setCart] = useState(() => {
@@ -63,6 +64,7 @@ function removeFromCart(productId) {
         decreaseQuantity={decreaseQuantity}
         removeFromCart={removeFromCart}
         />}/>
+        <Route path="/categories" element={<Categories addToCart={addToCart}/>}/>
       </Route>
     </Routes>
   );

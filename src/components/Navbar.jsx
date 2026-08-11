@@ -7,10 +7,9 @@ function Navbar({cart}) {
     <nav className="navbar">
       <NavLink className="web-name" to="/">Fashion</NavLink>
       <div className="nav-links">
-        <NavLink to="#">Catalogue</NavLink>
-        <NavLink to="#">Fashion</NavLink>
-        <NavLink to="#">Favourite</NavLink>
-        <NavLink to="#">Lifestyle</NavLink>
+        <NavLink to="/">Home</NavLink>
+        <NavLink to="/categories">Categories</NavLink>
+        <NavLink to="#">Contact us</NavLink>
         <Link to="/cart" className="cart-link">
           <span className="cart-icon">🛒</span>
           <span className="cart-count">{totalItems > 99 ? "99+" : totalItems}</span>

@@ -29,7 +29,7 @@ function Cart({ cart, increaseQuantity, decreaseQuantity, removeFromCart }) {
                            <button onClick={() => decreaseQuantity(item.id)}> − </button>
                            <span>{item.quantity}</span>
                            <button onClick={() => increaseQuantity(item.id)}>+ </button>
-                           <button className="remove-button" onClick={() => removeItem(item.id)}>Remove</button>
+                           <button className="remove-button" onClick={() => removeFromCart(item.id)}>Remove</button>
                        </div>
                        <p>Subtotal: ${(item.price * item.quantity).toFixed(2)}</p>
                     </div>
