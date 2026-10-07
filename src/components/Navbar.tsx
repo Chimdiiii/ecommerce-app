@@ -1,5 +1,6 @@
+import { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
-
+import { supabase } from "../lib/supabase";
 interface CartItem {
     id: number;
     title: string;
@@ -17,10 +18,27 @@ function Navbar({ cart }: NavbarProps) {
         (sum, item) => sum + item.quantity,
         0
     );
+    const [loggedIn, setLoggedIn] = useState(false);
+    useEffect(() => {
+        const checkUser = async () => {
+        const {
+            data: { session },
+        } = await supabase.auth.getSession();
+        setLoggedIn(!!session);
+    };
 
+    checkUser();
+
+    const {
+        data: { subscription },
+    } = supabase.auth.onAuthStateChange((_event, session) => {
+        setLoggedIn(!!session);
+    });
+
+    return () => subscription.unsubscribe();
+}, []);
     return (
        <nav className="bg-white h-[75px] flex flex-wrap justify-between items-center px-[60px] shadow-[0_2px_10px_rgba(0,0,0,0.08)] sticky top-0 z-[100] max-[768px]:px-[20px] max-[768px]:h-[65px]">
-
             <NavLink
                 to="/"
                 className="text-[28px] text-black [font-family:'Great_Vibes',cursive]"
@@ -29,7 +47,6 @@ function Navbar({ cart }: NavbarProps) {
             </NavLink>
 
             <div className="flex gap-[15px] flex-1 justify-end items-center max-[768px]:gap-[10px]">
-
                 <NavLink
                     to="/"
                     className={({ isActive }) =>
@@ -80,7 +97,21 @@ function Navbar({ cart }: NavbarProps) {
                 >
                     Contact us
                 </NavLink>
-
+               {loggedIn ? (
+                <NavLink
+                    to="/log-out"
+                    className="inline-block px-5 py-2 bg-red-500 text-white text-sm font-medium rounded hover:bg-red-600 transition"
+                >
+                Log out
+                </NavLink>
+                ) : (
+                <NavLink
+                    to="/login"
+                    className="inline-block px-5 py-2 bg-[#5B21B6] text-white text-sm font-medium rounded hover:bg-[#4C1D95] transition"
+                >
+                Log in
+                </NavLink>
+                )}
                 <Link
                     to="/cart"
                     className="relative flex items-center justify-center text-black no-underline ml-[5px]"
@@ -93,7 +124,6 @@ function Navbar({ cart }: NavbarProps) {
                         {totalItems > 99 ? "99+" : totalItems}
                     </span>
                 </Link>
-
             </div>
         </nav>
     );

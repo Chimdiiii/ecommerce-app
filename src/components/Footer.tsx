@@ -4,9 +4,10 @@ import {FaApple, FaGooglePlay, FaFacebook, FaTwitter, FaInstagram,} from "react-
 function Footer() {
     return (
         <footer className="bg-black text-white px-6 py-10 md:px-12 lg:px-20">
+            
             {/* Newsletter and discount section */}
-            <div className="mx-auto max-w-[1250px] rounded-[32px] bg-[#B197E8] px-6 py-10 text-black md:px-12 lg:px-20">
-                <div className="mx-auto max-w-[900px] text-center">
+            <div className="mx-auto max-w-312.5 rounded-4xl bg-[#B197E8] px-6 py-10 text-black md:px-12 lg:px-20">
+                <div className="mx-auto max-w-225 text-center">
                     <div className="flex items-center justify-center gap-4">
                         <h2 className="text-xl font-bold md:text-4xl">
                             Get discounts instantly
@@ -14,14 +15,14 @@ function Footer() {
                         <span className="hidden h-px w-40 bg-black md:block"></span>
                     </div>
 
-                    <p className="mx-auto mt-8 max-w-[900px] text-base leading-8 md:text-lg">
+                    <p className="mx-auto mt-8 max-w-225 text-base leading-8 md:text-lg">
                         To save you just have to log in to your account and look for the experiences with the green or yellow color code. On your first reservation
                          you can enjoy a{" "}
                         <strong>10% discount.</strong>
                     </p>
 
                     {/* Email input */}
-                    <div className="mx-auto mt-12 flex max-w-[595px]  overflow-hidden rounded-full bg-white p-0.5">
+                    <div className="mx-auto mt-12 flex max-w-148.75  overflow-hidden rounded-full bg-white p-0.5">
 
                         <input
                             type="email"
@@ -31,7 +32,7 @@ function Footer() {
 
                         <button
                             type="button"
-                            className="rounded-full bg-black px-8 py-3 text-sm font-medium text-white transition hover:bg-gray-800 md:px-10 md:text-base"
+                            className="rounded-full bg-black px-8 py-3 text-sm font-medium text-white transition hover:bg-[#5B21B6] md:px-10 md:text-base"
                         >
                             Get started
                         </button>
@@ -41,14 +42,14 @@ function Footer() {
             </div>
 
             {/* Main footer */}
-            <div className="mx-auto grid max-w-[1250px] grid-cols-1 gap-10 py-10 md:grid-cols-2 lg:grid-cols-4">
+            <div className="mx-auto grid max-w-312.5 grid-cols-1 gap-10 py-10 md:grid-cols-2 lg:grid-cols-4">
                 {/* Newsletter */}
                 <div>
                     <h3 className="text-xl font-bold">
                         Sign up for our newsletter
                     </h3>
 
-                    <p className="mt-5 max-w-[330px] text-base leading-8 text-gray-200">
+                    <p className="mt-5 max-w-82.5 text-base leading-8 text-gray-200">
                         Don't worry, we reserve our newsletter for important news so we only send a few updates a year.
                     </p>
 

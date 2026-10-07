@@ -1,6 +1,5 @@
 import { Routes, Route } from "react-router-dom";
 import { useCart } from "./hooks/UseCart";
-
 import Layout from "./components/Layout";
 import Home from "./pages/Homepage";
 import ProductDetails from "./pages/ProductDetails";
@@ -11,6 +10,7 @@ import LoginPage from "./pages/auth-pages/LoginPage";
 import RegisterPage from "./pages/auth-pages/RegisterPage";
 import ResetPasswordPage from "./pages/auth-pages/ResetPassword";
 import EmailVerificationPage from "./pages/auth-pages/EmailVerificationPage";
+import LogoutPage from "./pages/auth-pages/LogoutPage";
 
 function App() {
     const {
@@ -67,6 +67,7 @@ function App() {
             <Route path="/reset-password" element={<ResetPasswordPage />} />
             <Route path="/verify-email" element={<EmailVerificationPage />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/log-out" element={<LogoutPage />} />
         </Routes>
     );
 }

@@ -56,8 +56,7 @@ export function useCart() {
 
     function decreaseQuantity(productId: number) {
         setCart((currentCart) =>
-            currentCart
-                .map((item) =>
+            currentCart.map((item) =>
                     item.id === productId
                         ? { ...item, quantity: item.quantity - 1 }
                         : item

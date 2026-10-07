@@ -20,13 +20,10 @@ function Layout({ cart, message }: LayoutProps) {
     return (
         <>
             <Navbar cart={cart} />
-
             <ToastNotification message={message} />
-
             <main>
                 <Outlet />
             </main>
-
             <Footer/>
         </>
     );

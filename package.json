@@ -10,6 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@paystack/inline-js": "^2.25.0",
+    "@supabase/supabase-js": "^2.117.0",
     "@tailwindcss/vite": "^4.3.3",
     "node": "^26.5.0",
     "react": "^19.2.7",
@@ -20,6 +22,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
+    "@types/paystack__inline-js": "^1.0.3",
     "@types/react": "^19.2.17",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^6.0.3",

@@ -1,19 +1,14 @@
 import { ReactNode } from "react";
 
-interface AuthBackgroundProps {
-    children: ReactNode;
-}
 
-function AuthBackground({ children }: AuthBackgroundProps) {
+function AuthBackground() {
     return (
         <div
-            className="relative min-h-screen w-full overflow-hidden bg-cover bg-center bg-no-repeat"
+            className="absolute inset-0 z-0 overflow-hidden bg-cover bg-center bg-no-repeat sm:bg-center"
             style={{
                 backgroundImage: "url('/auth-background.png')",
             }}
-        >
-            {children}
-        </div>
+        />
     );
 }
 

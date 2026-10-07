@@ -15,22 +15,30 @@ function Layout({
     linkText,
     linkTo,
     children,
-}: LayoutProps){
-
+}: LayoutProps) {
     return (
-        <AuthBackground>
-            <div className=" min-h-screen flex flex-col">
-            <AuthNavbar
-                text={text}
-                linkText={linkText}
-                linkTo={linkTo} 
-            />
-            <main className="flex-1">
-                {children}
-            </main>
-            <Footer/>    
+        <div className="min-h-screen flex flex-col">
+
+            {/* Navbar and Page content */}
+            <div className="relative flex-1">
+                <AuthBackground />
+                <div className="relative z-10 min-h-full flex flex-col">
+                    <AuthNavbar
+                        text={text}
+                        linkText={linkText}
+                        linkTo={linkTo}
+                    />
+
+                    <main className="flex-1">
+                        {children}
+                    </main>
+
+                </div>
+            </div>
+            <Footer />
+
         </div>
-        </AuthBackground>
-    );    
+    );
 }
+
 export default Layout;
